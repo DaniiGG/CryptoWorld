@@ -204,3 +204,16 @@ h1{
     height: 40px;
   }
 }
+
+@media (max-width: 1491px) {
+  .crypto-item li {
+    display: inline-block;
+    margin-right: 2vw;
+    min-width: 110px;
+  }
+
+  .crypto-item li:nth-child(5) {
+    margin-left: 4vw;
+    margin-right: 2vw;
+  }
+}

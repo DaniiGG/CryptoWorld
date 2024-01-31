@@ -166,3 +166,16 @@ div{
     }
 }
   
+
+@media (max-width: 1491px) {
+  .crypto-item li {
+    display: inline-block;
+    margin-right: 2vw;
+    min-width: 130px;
+  }
+
+  .crypto-item li:nth-child(5) {
+    margin-left: 4vw;
+    margin-right: 2vw;
+  }
+}
