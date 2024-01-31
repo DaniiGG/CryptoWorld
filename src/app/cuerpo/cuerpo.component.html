@@ -11,7 +11,7 @@
             <li><p>{{criptoMoneda.item.name.slice(0, 15)}}</p></li>
             <li><p>{{criptoMoneda.item.data.price.slice(0, 9)}}</p></li>
             <li><p><img [src]="criptoMoneda.item.data.sparkline"></p></li>
-            <li><button class="button" (click)="seguirMoneda(criptoMoneda.item.id)">Seguir</button></li>
+            <li><button class="button" (click)="seguirMoneda(criptoMoneda.item.name, criptoMoneda.item.large, criptoMoneda.item.symbol, criptoMoneda.item.id)">Seguir</button></li>
             
             <li><button (click)="enviarDetalle(criptoMoneda.item.id)" class="button">
               Ver detalles

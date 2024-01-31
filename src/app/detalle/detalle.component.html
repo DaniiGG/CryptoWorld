@@ -7,6 +7,9 @@
       &nbsp; &nbsp;{{ ajax.detallesMoneda?.name }} ({{ ajax.detallesMoneda?.symbol }})</h3>
 
     <p><b>Precio actual en euros:</b> {{ ajax.detallesMoneda?.market_data.current_price.eur }} €</p>
+    <p><b>Precio más alto (24h) en euros:</b> {{ ajax.detallesMoneda?.market_data.high_24h.eur }} €</p>
+    <p><b>Precio más bajo (24h) en euros:</b> {{ ajax.detallesMoneda?.market_data.low_24h.eur }} €</p>
+    <p><b>Volumen total en euros:</b> {{ ajax.detallesMoneda?.market_data.total_volume.eur }} €</p>
     <p><b>Posición en el mercado:</b> {{ ajax.detallesMoneda?.market_cap_rank }}</p>
     <p><b>Fecha de creación:</b> 
       <ng-container *ngIf="!ajax.detallesMoneda?.genesis_date">
@@ -15,6 +18,7 @@
       {{ ajax.detallesMoneda?.genesis_date }}
     </p>
     
+    <p><b>Descripción:</b>
     <ng-container *ngIf="ajax.detallesMoneda?.description && ajax.detallesMoneda.description.es">
       <p>{{ ajax.detallesMoneda.description.es.length > 600 ? (ajax.detallesMoneda.description.es | slice:0:600) + '...' : ajax.detallesMoneda.description.es }}</p>
 
@@ -27,7 +31,7 @@
     <ng-container *ngIf="(!ajax.detallesMoneda?.description?.es && !ajax.detallesMoneda?.description?.en)">
       <p>No hay descripción disponible</p>
     </ng-container>
-
+  </p>
     <div>
       <p><b>Links relevantes:</b></p>
       <div class="links">

@@ -56,7 +56,7 @@ private route =inject(ActivatedRoute);
         if (chartContainer) {
           this.chart = new CanvasJS.Chart('chartContainer', {
             animationEnabled: true,
-            theme: 'light2',
+            theme: 'dark',
             title: {
               text: 'Precio de la Moneda en los últimos 30 días'
             },

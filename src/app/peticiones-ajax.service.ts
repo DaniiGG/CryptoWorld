@@ -76,7 +76,6 @@ export class PeticionesAjaxService {
           getDocs(q)
             .then((response) => {
               this.datosFS = response.docs.map((doc) => doc.data());
-              console.log("Base de datos:", JSON.stringify(this.datosFS, null, 2));
               resolve(); // Resuelve la promesa después de obtener los datos
             })
             .catch((error) => {
@@ -84,8 +83,6 @@ export class PeticionesAjaxService {
               reject(error); // Rechaza la promesa en caso de error
             });
         } else {
-          console.error('Error: Usuario no autenticado.');
-          reject('Usuario no autenticado.'); // Rechaza la promesa si el usuario no está autenticado
         }
       });
     });
@@ -152,7 +149,7 @@ export class PeticionesAjaxService {
   }
 
 
-  seguirMoneda(criptoMonedaId: string) {
+  seguirMoneda(criptoMonedaNombre: string, criptoMonedaImagen: string, criptoMonedaSymbol: string, criptoMonedaId: string) {
     const auth = getAuth();
     const uid = this.usuario?.uid;
   
@@ -166,6 +163,9 @@ export class PeticionesAjaxService {
     const fechaSeguido = new Date().toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
   
     addDoc(docRef, {
+      nombre:criptoMonedaNombre,
+      imagen:criptoMonedaImagen,
+      symbol:criptoMonedaSymbol,
       idMoneda: criptoMonedaId,
       fechaSeguido: fechaSeguido,
       uid: uid
@@ -253,6 +253,7 @@ export class PeticionesAjaxService {
     const provider = new GithubAuthProvider();
     const userCredential = await signInWithPopup(auth, provider);
     const user = userCredential.user;
+    this.router.navigate(["cuerpo"]);
     console.log('Usuario inició sesión con GitHub exitosamente:', user);
   } catch (error) {
     console.error('Error al iniciar sesión con GitHub:', error);

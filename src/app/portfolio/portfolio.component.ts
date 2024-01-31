@@ -33,14 +33,7 @@ export class PortfolioComponent implements OnInit {
     this.mostrarLoader = true;
   
     this.ajax.obtenerDatos().then(() => {
-      // Llamada a obtenerDatos completada, ahora puedes acceder a this.ajax.datosFS
       console.log("datos de monedas en dattosFS", this.ajax.datosFS);
-  
-      // Iterar sobre cada dato en datosFS
-      this.ajax.datosFS.forEach(dato => {
-        this.ajax.obtenerDetalles(dato.idMoneda);
-        console.log("datos de monedas en portfolio", dato.idMoneda);
-      });
   
       this.mostrarLoader = false;
     }).catch(error => {
@@ -62,7 +55,10 @@ export class PortfolioComponent implements OnInit {
   eliminarMoneda(uid:string, idMoneda: string) {
     console.log("moneda a borrar "+ idMoneda );
     this.ajax.eliminarMoneda(uid, idMoneda);
-    this.ajax.obtenerDatos();
+    
+    setInterval(() => {
+      this.ajax.obtenerDatos();
+    }, 500);
   }
 
   

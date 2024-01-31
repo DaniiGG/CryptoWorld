@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+
 import { PeticionesAjaxService } from '../peticiones-ajax.service';
 
 import { EventEmitter, Output } from '@angular/core';
 
 import { Router } from '@angular/router';
+
 import { FormsModule } from '@angular/forms';
 
 import { CommonModule } from '@angular/common';
@@ -19,22 +21,16 @@ import { RouterModule } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-
   items:any[]=[];
-
   contenidoInput='';
 
-  
-  
   @Output() lanzarPeticion = new EventEmitter<string>();
   @Output() detallesMonedas = new EventEmitter<string>();
 
   constructor(public ajax:PeticionesAjaxService, private router:Router){
-
     
   }
   ngOnInit(){
-
     this.ajax.peticionAjax();
   }
 

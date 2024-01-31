@@ -60,11 +60,11 @@ export class CuerpoComponent {
   
 
 
-  seguirMoneda(criptoMonedaId: string) {
+  seguirMoneda(criptoMonedaNombre: string, criptoMonedaImagen: string, criptoMonedaSymbol: string, criptoMonedaId: string) {
     this.ajax.estaUsuarioIniciadoSesion().then((logueado) => {
       if (logueado) {
         // El usuario está logueado, realiza la acción de seguir la moneda
-        this.ajax.seguirMoneda(criptoMonedaId);
+        this.ajax.seguirMoneda(criptoMonedaNombre, criptoMonedaImagen, criptoMonedaSymbol,criptoMonedaId);
         this.seguida = true;
       } else {
         // El usuario no está logueado, puedes mostrar un mensaje o redirigirlo a la página de inicio de sesión

@@ -7,10 +7,10 @@
             <li class="crypto-item" *ngFor="let dato of ajax.datosFS">
               <ul>
                 <li>
-                    <img [src]="ajax.detallesMoneda?.image?.small" alt="Imagen de la moneda">
+                    <img [src]="dato.imagen" alt="Imagen de la moneda">
                 </li>
-                <li><p>{{ ajax.detallesMoneda?.name}}</p></li>
-                <li><p>{{ajax.detallesMoneda?.market_data.current_price?.usd}} $</p></li>
+                <li><p>{{ dato.nombre}}</p></li>
+                <li><p>{{dato.symbol}}</p></li>
                 <li><p>Siguiendo desde<br> {{dato.fechaSeguido}}</p></li>
                 <li><button class="button" (click)="eliminarMoneda(dato.uid, dato.idMoneda)">Dejar de seguir</button></li>
                 <li><button  class="button" (click)="enviarDetalle(dato.idMoneda)">

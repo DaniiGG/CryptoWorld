@@ -40,8 +40,6 @@ export class SesionComponent {
   }
   iniciarSesionConGitHub(): void {
     this.ajax.iniciarSesionConGitHub()
-      .then(() => this.router.navigate(["cuerpo"]))
-      .catch((error) => console.error('Error al iniciar sesión con GitHub desde el componente:', error));
   }
 
 }

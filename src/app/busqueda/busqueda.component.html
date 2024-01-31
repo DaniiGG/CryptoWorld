@@ -12,7 +12,7 @@
                 </li>
                 <li><p>{{criptoMoneda.name.slice(0, 16)}}</p></li>
                 <li><p>{{criptoMoneda.symbol}}</p></li>
-                <li><button class="button" (click)="seguirMoneda(criptoMoneda.id)">Seguir</button></li>
+                <li><button class="button" (click)="seguirMoneda(criptoMoneda.name, criptoMoneda.large, criptoMoneda.symbol, criptoMoneda.id)">Seguir</button></li>
                 <li><button (click)="enviarDetalle(criptoMoneda.id)" class="button">
                   Ver detalles
                   <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
