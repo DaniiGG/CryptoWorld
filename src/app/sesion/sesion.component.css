@@ -1,0 +1,85 @@
+.container {
+    margin-top: 150px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    column-gap: 50px;
+
+}
+.container div:nth-child(1){
+    width: 30vw;
+}
+.container div:nth-child(3){
+    width: 30vw;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    font-size: larger;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.google-btn, .github {
+    background-color: #ffffff;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.34);
+}
+
+.google-btn:hover , .github:hover {
+    background-color: #f2f2f2;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    margin-top: 10px;
+    display: inline-block;
+}
+button img{
+width: 35px;
+height: 35px;
+}
+.botones{
+    display: flex;
+    justify-content: center;
+    column-gap: 50px;
+}
+.botones button{
+    padding: 5px;
+    border-radius: 50%;
+    border:none
+}
+p{
+    font-weight: bolder;
+}
+.lr{
+    border: 1px solid black;
+    height: 400px;
+    width: 1px;
+}

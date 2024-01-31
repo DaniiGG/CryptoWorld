@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cryptoworld-85fa4": {
+      "hosting": {
+        "my-app": [
+          "cryptoworld-85fa4"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cryptoworld-85fa4"
+  }
+}

@@ -1,0 +1,38 @@
+<div class="container">
+    <div>
+        <h2>Iniciar Sesión</h2>
+        <form (submit)="iniciarSesionConCorreo(email.value, password.value)">
+            <input type="email" name="email" placeholder="Correo Electrónico" required #email>
+            <input type="password" name="password" placeholder="Contraseña" required #password><br><br>
+            <button type="submit">Iniciar sesión</button>
+        </form>
+        <br><br>
+        <p>O inicia con:</p><br>
+        <div class="botones">
+            
+            <button class="google-btn" (click)="inicioSesion()"><img src="../../assets/img/Google__G__logo.svg.png"></button>
+            <button class="github" (click)="iniciarSesionConGitHub()"><img src="../../assets/img/GitHub_Invertocat_Logo.svg"></button>
+        </div><br>
+        <div>
+            
+        </div>
+
+            
+        
+    </div>
+
+
+    <div class="lr">
+        <span></span>
+    </div>
+
+    <div>
+        <h2>Registráte</h2>
+        <form (submit)="registrarUsuario(nombre.value, email.value, password.value)">
+            <input type="text" name="nombre" placeholder="Nombre"  required #nombre>
+            <input type="email" name="email" placeholder="Correo Electrónico" required #email>
+            <input type="password" name="password" placeholder="Contraseña" required #password><br><br>
+            <button type="submit">Registrar Usuario</button>
+        </form>
+    </div>
+</div>

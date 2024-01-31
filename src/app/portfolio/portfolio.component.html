@@ -1,0 +1,37 @@
+<div>
+    <h1>Monedas que sigues</h1>
+    
+    <ng-container *ngIf="ajax.datosFS.length > 0; else mensajeVacio">
+          <ul class="crypto-list">
+            
+            <li class="crypto-item" *ngFor="let dato of ajax.datosFS">
+              <ul>
+                <li>
+                    <img [src]="ajax.detallesMoneda?.image?.small" alt="Imagen de la moneda">
+                </li>
+                <li><p>{{ ajax.detallesMoneda?.name}}</p></li>
+                <li><p>{{ajax.detallesMoneda?.market_data.current_price?.usd}} $</p></li>
+                <li><p>Siguiendo desde<br> {{dato.fechaSeguido}}</p></li>
+                <li><button class="button" (click)="eliminarMoneda(dato.uid, dato.idMoneda)">Dejar de seguir</button></li>
+                <li><button  class="button" (click)="enviarDetalle(dato.idMoneda)">
+                  Ver detalles
+                  <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+                    <path
+                      clip-rule="evenodd"
+                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                      fill-rule="evenodd"
+                    ></path>
+                  </svg>
+                </button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </ng-container>
+        <ng-template #mensajeVacio>
+          <p class="seguidasVacio">No estás siguiendo ninguna moneda en este momento.</p>
+      </ng-template>
+      <div class="loader" *ngIf="mostrarLoader">
+        <div class="justify-content-center jimu-primary-loading">aa</div>
+      </div>
+    </div>

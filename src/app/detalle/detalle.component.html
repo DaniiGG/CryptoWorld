@@ -1,0 +1,49 @@
+<div class="principal">
+<h1>Detalles de {{ajax.detallesMoneda?.name}}</h1>
+<div class="detalles-moneda">
+  
+  <div>
+    <h3> <img *ngIf="ajax.detallesMoneda?.image" [src]="ajax.detallesMoneda.image.small" alt="Imagen de la moneda"> 
+      &nbsp; &nbsp;{{ ajax.detallesMoneda?.name }} ({{ ajax.detallesMoneda?.symbol }})</h3>
+
+    <p><b>Precio actual en euros:</b> {{ ajax.detallesMoneda?.market_data.current_price.eur }} €</p>
+    <p><b>Posición en el mercado:</b> {{ ajax.detallesMoneda?.market_cap_rank }}</p>
+    <p><b>Fecha de creación:</b> 
+      <ng-container *ngIf="!ajax.detallesMoneda?.genesis_date">
+        No hay información
+      </ng-container>
+      {{ ajax.detallesMoneda?.genesis_date }}
+    </p>
+    
+    <ng-container *ngIf="ajax.detallesMoneda?.description && ajax.detallesMoneda.description.es">
+      <p>{{ ajax.detallesMoneda.description.es.length > 600 ? (ajax.detallesMoneda.description.es | slice:0:600) + '...' : ajax.detallesMoneda.description.es }}</p>
+
+    </ng-container>
+    
+    <ng-container *ngIf="(!ajax.detallesMoneda?.description?.es && ajax.detallesMoneda?.description?.en)">
+      <p>{{ ajax.detallesMoneda?.description?.en?.length > 600 ? (ajax.detallesMoneda?.description?.en | slice:0:600) + '...' : ajax.detallesMoneda?.description?.en }}</p>
+    </ng-container>
+    
+    <ng-container *ngIf="(!ajax.detallesMoneda?.description?.es && !ajax.detallesMoneda?.description?.en)">
+      <p>No hay descripción disponible</p>
+    </ng-container>
+
+    <div>
+      <p><b>Links relevantes:</b></p>
+      <div class="links">
+        <p><a target="_blank" [href]="cleanHomepageLink(ajax.detallesMoneda?.links.homepage)">Página oficial</a></p>
+        <p><a target="_blank" [href]="cleanHomepageLink(ajax.detallesMoneda?.links.repos_url.github)">GitHub</a></p>
+        <p><a target="_blank" [href]="cleanHomepageLink(ajax.detallesMoneda?.links.blockchain_site)">Blockchain</a></p>
+      </div>
+    </div>
+    
+  </div>
+
+  <button (click)="toggleGrafica()" class="button">{{ mostrarGrafica ? 'Ocultar Grafica' : 'Mostrar Grafica' }}</button>
+  <div *ngIf="mostrarGrafica">
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+  </div>
+  
+  
+</div>
+

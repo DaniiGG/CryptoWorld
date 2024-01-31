@@ -1,0 +1,39 @@
+<div>
+    <h1>Resultados de la busqueda</h1>
+      <div class="loader" *ngIf="mostrarLoader">
+        <div class="justify-content-center jimu-primary-loading"></div>
+      </div>
+          <ul class="crypto-list">
+            <li *ngFor="let criptoMoneda of ajax.busqueda; let i = index">
+              <ul>
+          
+                <li>
+                    <img [src]="criptoMoneda.large" alt="Imagen de la moneda">
+                </li>
+                <li><p>{{criptoMoneda.name.slice(0, 16)}}</p></li>
+                <li><p>{{criptoMoneda.symbol}}</p></li>
+                <li><button class="button" (click)="seguirMoneda(criptoMoneda.id)">Seguir</button></li>
+                <li><button (click)="enviarDetalle(criptoMoneda.id)" class="button">
+                  Ver detalles
+                  <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+                    <path
+                      clip-rule="evenodd"
+                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                      fill-rule="evenodd"
+                    ></path>
+                  </svg>
+                </button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+    </div>
+    <div class="mensaje-logueado" *ngIf="logueado">
+      <p><span>Para seguir monedas debes estar logueado</span></p>
+      </div>
+      
+      
+      <div class="mensaje-seguido" *ngIf="seguida">
+        <p><span>La moneda  ha sido seguida</span></p>
+      </div>
+      
