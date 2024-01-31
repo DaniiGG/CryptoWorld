@@ -62,11 +62,6 @@ export class CabeceraComponent implements OnInit{
    
   
   
-    detallesMoneda(criptoMoneda: any) {
-      this.detallesMonedas.emit(criptoMoneda.id)
-      this.ajax.obtenerDetalles(criptoMoneda.id);
-      console.log('Detalles de la moneda:', criptoMoneda.id);
-    }
   
     mostrarDetalle(id:any){
       console.log("Navigating datalle del "+ id);
