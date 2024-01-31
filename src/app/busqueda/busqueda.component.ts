@@ -48,9 +48,15 @@ export class BusquedaComponent {
         // El usuario está logueado, realiza la acción de seguir la moneda
         this.ajax.seguirMoneda(criptoMonedaNombre, criptoMonedaImagen, criptoMonedaSymbol,criptoMonedaId);
         this.seguida = true;
+        setTimeout(() => {
+          this.seguida = false;
+        }, 3000);
       } else {
         // El usuario no está logueado, puedes mostrar un mensaje o redirigirlo a la página de inicio de sesión
         this.logueado = true;
+        setTimeout(() => {
+          this.logueado = false;
+        }, 3000);
         // Puedes redirigir al usuario a la página de inicio de sesión, por ejemplo:
         // this.router.navigate(['/login']);
       }
