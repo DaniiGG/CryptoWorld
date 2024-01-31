@@ -226,7 +226,7 @@ export class PeticionesAjaxService {
       })
       .catch((error) => {
         console.error('Error al registrar usuario:', error);
-        throw error; // Puedes propagar el error si es necesario manejarlo en algún lugar.
+        throw error; 
       });
   }
 
